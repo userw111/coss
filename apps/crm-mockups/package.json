@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "@coss/ui": "workspace:*",
+    "@tabler/icons-react": "^3.44.0",
+    "@tailwindcss/vite": "^4.1.17",
+    "@vitejs/plugin-react": "^5.1.1",
+    "lucide-react": "^1.14.0",
+    "motion": "^12.38.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "vite": "^7.2.4"
+  },
+  "devDependencies": {
+    "@coss/typescript-config": "workspace:*",
+    "@types/react": "^19.2.6",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3"
+  },
+  "license": "MIT",
+  "name": "crm-mockups",
+  "private": true,
+  "scripts": {
+    "build": "tsc --noEmit && vite build",
+    "clean": "rm -rf dist node_modules",
+    "dev": "vite --host 0.0.0.0 --port 5177",
+    "lint": "biome lint .",
+    "preview": "vite preview --host 0.0.0.0 --port 4177",
+    "typecheck": "tsc --noEmit"
+  },
+  "type": "module",
+  "version": "0.1.0"
+}

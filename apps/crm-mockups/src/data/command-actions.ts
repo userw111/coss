@@ -1,0 +1,110 @@
+import {
+  IconArchive,
+  IconCalendar,
+  IconCreditCard,
+  IconDatabase,
+  IconDeviceDesktopCog,
+  IconFileExport,
+  IconFileImport,
+  IconHistory,
+  IconLayoutSidebarRightCollapse,
+  IconMail,
+  IconPlug,
+  IconSearch,
+  IconSettings,
+  IconShieldCheck,
+  IconSparkles,
+  IconTrash,
+  IconUserCog,
+  IconUsers,
+  IconWorld,
+} from "@tabler/icons-react";
+import type { CommandAction } from "../types";
+
+export const commandActions: CommandAction[] = [
+  {
+    icon: IconTrash,
+    id: "delete-company",
+    label: "Delete Company",
+    tone: "danger",
+  },
+  { icon: IconFileExport, id: "export-company", label: "Export Company" },
+  { icon: IconFileImport, id: "import-companies", label: "Import Companies" },
+  { icon: IconFileExport, id: "export-view", label: "Export View" },
+  {
+    icon: IconArchive,
+    id: "see-deleted-companies",
+    label: "See deleted Companies",
+  },
+  {
+    icon: IconLayoutSidebarRightCollapse,
+    id: "create-view",
+    label: "Create View",
+  },
+  { hotKeys: ["/"], icon: IconSearch, id: "search", label: "Search" },
+  { hotKeys: ["@"], icon: IconSparkles, id: "ask-ai", label: "Ask AI" },
+  {
+    icon: IconHistory,
+    id: "previous-ai-chats",
+    label: "View Previous AI Chats",
+  },
+  { icon: IconMail, id: "compose-email", label: "Compose Email" },
+  {
+    hotKeys: ["G", "S"],
+    icon: IconSettings,
+    id: "go-settings",
+    label: "Go to Settings",
+  },
+  {
+    icon: IconDeviceDesktopCog,
+    id: "go-experience-settings",
+    label: "Go to Experience Settings",
+  },
+  {
+    icon: IconUserCog,
+    id: "go-accounts-settings",
+    label: "Go to Accounts Settings",
+  },
+  { icon: IconMail, id: "go-emails-settings", label: "Go to Emails Settings" },
+  {
+    icon: IconCalendar,
+    id: "go-calendars-settings",
+    label: "Go to Calendars Settings",
+  },
+  {
+    icon: IconSettings,
+    id: "go-general-settings",
+    label: "Go to General Settings",
+  },
+  {
+    icon: IconDatabase,
+    id: "go-data-model-settings",
+    label: "Go to Data Model Settings",
+  },
+  {
+    icon: IconUsers,
+    id: "go-members-settings",
+    label: "Go to Members Settings",
+  },
+  {
+    icon: IconShieldCheck,
+    id: "go-roles-settings",
+    label: "Go to Roles Settings",
+  },
+  {
+    icon: IconWorld,
+    id: "go-domains-settings",
+    label: "Go to Domains Settings",
+  },
+  {
+    icon: IconCreditCard,
+    id: "go-billing-settings",
+    label: "Go to Billing Settings",
+  },
+  {
+    icon: IconPlug,
+    id: "go-apis-webhooks-settings",
+    label: "Go to APIs & Webhooks Settings",
+  },
+  { icon: IconPlug, id: "go-apps-settings", label: "Go to Apps Settings" },
+];
