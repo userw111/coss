@@ -1,7 +1,7 @@
 import type { TablerIcon } from "@tabler/icons-react";
 import type { LucideIcon } from "lucide-react";
 
-export type MainPage = "campaigns" | "leads" | "analytics";
+export type MainPage = "home" | "pipeline" | "inbox";
 export type SettingsPage =
   | "business"
   | "integrations"

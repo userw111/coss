@@ -5,6 +5,7 @@ import { commandActions } from "../data/command-actions";
 import type { CommandAction } from "../types";
 
 type CommandSidePanelProps = {
+  closing?: boolean;
   onClose: () => void;
   onSearchChange: (value: string) => void;
   open: boolean;
@@ -12,6 +13,7 @@ type CommandSidePanelProps = {
 };
 
 export function CommandSidePanel({
+  closing = false,
   onClose,
   onSearchChange,
   open,
@@ -82,60 +84,58 @@ export function CommandSidePanel({
   };
 
   return (
-    <>
-      <div
-        aria-hidden="true"
-        className={cn("twenty-side-panel-gap", open && "is-open")}
-      />
-      <aside
-        aria-hidden={!open}
-        aria-label="Command menu"
-        className={cn("twenty-side-panel-wrapper", open && "is-open")}
-      >
-        <div className="twenty-side-panel" data-side-panel="">
-          <div className="twenty-side-panel-topbar">
-            <div className="twenty-side-panel-topbar-content">
-              <button
-                aria-label="Close side panel"
-                className="twenty-light-icon-button twenty-side-panel-close"
-                onClick={onClose}
-                type="button"
-              >
-                <IconX size={16} stroke={1.8} />
-              </button>
-              <input
-                className="twenty-side-panel-input"
-                onChange={handleSearchChange}
-                onKeyDown={handleKeyDown}
-                placeholder="Type anything..."
-                ref={inputRef}
-                tabIndex={open ? 0 : -1}
-                type="text"
-                value={search}
-              />
-            </div>
-          </div>
-
-          <div className="twenty-side-panel-list-scroll">
-            <div className="twenty-side-panel-list">
-              <div className="twenty-command-group-label">Other</div>
-              {filteredActions.length > 0 ? (
-                filteredActions.map((action, index) => (
-                  <CommandMenuAction
-                    action={action}
-                    active={index === activeIndex}
-                    key={action.id}
-                    onMouseEnter={() => setActiveIndex(index)}
-                  />
-                ))
-              ) : (
-                <div className="twenty-command-empty">No results found</div>
-              )}
-            </div>
+    <aside
+      aria-hidden={!open}
+      aria-label="Command menu"
+      className={cn(
+        "twenty-side-panel-wrapper",
+        open && "is-open",
+        closing && "is-closing",
+      )}
+    >
+      <div className="twenty-side-panel" data-side-panel="">
+        <div className="twenty-side-panel-topbar">
+          <div className="twenty-side-panel-topbar-content">
+            <button
+              aria-label="Close side panel"
+              className="twenty-light-icon-button twenty-side-panel-close"
+              onClick={onClose}
+              type="button"
+            >
+              <IconX size={16} stroke={1.8} />
+            </button>
+            <input
+              className="twenty-side-panel-input"
+              onChange={handleSearchChange}
+              onKeyDown={handleKeyDown}
+              placeholder="Type anything..."
+              ref={inputRef}
+              tabIndex={open ? 0 : -1}
+              type="text"
+              value={search}
+            />
           </div>
         </div>
-      </aside>
-    </>
+
+        <div className="twenty-side-panel-list-scroll">
+          <div className="twenty-side-panel-list">
+            <div className="twenty-command-group-label">Other</div>
+            {filteredActions.length > 0 ? (
+              filteredActions.map((action, index) => (
+                <CommandMenuAction
+                  action={action}
+                  active={index === activeIndex}
+                  key={action.id}
+                  onMouseEnter={() => setActiveIndex(index)}
+                />
+              ))
+            ) : (
+              <div className="twenty-command-empty">No results found</div>
+            )}
+          </div>
+        </div>
+      </div>
+    </aside>
   );
 }
 

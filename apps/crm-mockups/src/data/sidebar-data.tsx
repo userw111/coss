@@ -1,5 +1,4 @@
 import {
-  BarChart3,
   BriefcaseBusiness,
   Building2,
   CreditCard,
@@ -20,9 +19,9 @@ import type {
 } from "../types";
 
 export const workspaceItems: Array<NavigationItemConfig<MainPage>> = [
-  { icon: Megaphone, id: "campaigns", label: "Campaigns" },
-  { disabled: true, icon: Inbox, id: "leads", label: "Leads" },
-  { disabled: true, icon: BarChart3, id: "analytics", label: "Analytics" },
+  { icon: Building2, id: "home", label: "CRM Home" },
+  { icon: Megaphone, id: "pipeline", label: "Pipeline" },
+  { disabled: true, icon: Inbox, id: "inbox", label: "Shared Inbox" },
 ];
 
 export const rootFooterItems: Array<NavigationItemConfig<RootFooterItemId>> = [
@@ -74,9 +73,9 @@ export const settingsGroups: SettingsNavigationGroup[] = [
 ];
 
 export const mainPageTitle: Record<MainPage, string> = {
-  analytics: "Analytics",
-  campaigns: "Campaigns",
-  leads: "Leads",
+  home: "CRM Home",
+  inbox: "Shared Inbox",
+  pipeline: "Pipeline",
 };
 
 export const settingsPageTitle: Record<SettingsPage, string> = {

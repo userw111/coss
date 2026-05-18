@@ -22,7 +22,11 @@ export function ObjectHeader({
   title,
 }: ObjectHeaderProps) {
   const singularTitle =
-    title === "Companies" ? "Company" : title.replace(/s$/, "");
+    title === "CRM Home" || title === "Pipeline"
+      ? "Lead"
+      : title === "Companies"
+        ? "Company"
+        : title.replace(/s$/, "");
 
   return (
     <header className="twenty-page-header">
